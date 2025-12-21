@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+:root { color-scheme: dark; }
+
+body {
+  background: #020617; /* slate-950 */
+  color: #e2e8f0;      /* slate-200 */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
