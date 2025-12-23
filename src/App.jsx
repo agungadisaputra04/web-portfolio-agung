@@ -34,12 +34,19 @@ export default function App() {
     <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
       {PROFILE.name}
       <br />
-      <span className="text-cyan-400">Ops-first. DevOps-next.</span>
+      <span className="text-cyan-400/90">Ops-focused.</span>
     </h1>
 
     <p className="text-sm md:text-base text-slate-300 max-w-xl">
-      {PROFILE.tagline}
-    </p>
+  {PROFILE.tagline}
+</p>
+
+{PROFILE.context && (
+  <p className="text-xs text-slate-400 max-w-xl">
+    {PROFILE.context}
+  </p>
+)}
+    
 
     <div className="flex flex-wrap gap-3">
       <a
@@ -59,21 +66,23 @@ export default function App() {
         rel="noreferrer"
         className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-xs font-semibold text-slate-100 hover:border-emerald-500/60 hover:text-emerald-300 transition-colors"
       >
-        Download CV
+        Download Resume
         <ArrowUpRight className="w-3 h-3" />
       </a>
     </div>
 
 <div className="flex flex-wrap gap-4 text-xs text-slate-400">
       <span>📍 {PROFILE.location}</span>
-      <span className="font-mono">automation • observability • reliability</span>
+      <span className="font-mono">
+  automation • observability • reliability • scalability
+</span>
+
     </div>
 
-    {/* ✅ MINI IMPACT CHIPS (isi space dengan rapi) */}
-    <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl">
+    <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-xl">
       <div className="rounded-xl border border-slate-800 bg-slate-900/60 px-3 py-2">
         <p className="text-[10px] text-slate-500">Role</p>
-        <p className="text-xs font-semibold text-slate-200">L1 Support</p>
+        <p className="text-xs font-semibold text-slate-200">Operations Support Engineer</p>
       </div>
       <div className="rounded-xl border border-slate-800 bg-slate-900/60 px-3 py-2">
         <p className="text-[10px] text-slate-500">Focus</p>
@@ -81,45 +90,49 @@ export default function App() {
       </div>
       <div className="rounded-xl border border-slate-800 bg-slate-900/60 px-3 py-2">
         <p className="text-[10px] text-slate-500">Ops</p>
-        <p className="text-xs font-semibold text-indigo-300">Monitoring</p>
+        <p className="text-xs font-semibold text-indigo-300">Monitoring & Alerting</p>
       </div>
-      <div className="rounded-xl border border-slate-800 bg-slate-900/60 px-3 py-2">
-        <p className="text-[10px] text-slate-500">Next</p>
-        <p className="text-xs font-semibold text-emerald-300">DevOps</p>
-      </div>
+
     </div>
+    
   </div>
 
   {/* RIGHT: PHOTO */}
   <div className="flex justify-center md:justify-end">
-      <div className="relative">
-      {/* glow */}
-      <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-cyan-500/40 to-indigo-500/40 blur-2xl" />
+  <div className="relative">
+    {/* ambient glow behind the frame */}
+    <div className="absolute -inset-4 rounded-[28px] bg-slate-500/10 blur-2xl -z-10" />
+
+    <div className="rounded-3xl border border-slate-800 bg-slate-900/50 p-3 shadow-sm">
       <img
         src="/profile.jpg"
         alt="Agung Adi Saputra"
-        width={256}
-        height={256}
+        width={260}
+        height={260}
         loading="eager"
         decoding="async"
         fetchPriority="high"
-        className="relative h-64 w-64 rounded-3xl object-cover border border-slate-800 shadow-lg"
+        className="h-56 w-56 rounded-2xl object-cover object-top ring-1 ring-slate-700/60"
       />
     </div>
   </div>
+</div>
+
+
+
 </section>
 
         {/* ABOUT */}
         <section id="about" className="scroll-mt-24">
           <SectionTitle
             eyebrow="About"
-            title="Support Engineer with a DevOps mindset."
-            subtitle="I work close to production systems, and I love turning repetitive ops tasks into automation."
+            title="Support Engineer working close to production systems."
+            subtitle="Focused on log-driven troubleshooting and automating repetitive operational tasks."
           />
           <div className="grid gap-4 md:grid-cols-3">
             <Card><p className="text-sm text-slate-300">Daily: monitoring, incident checks, and log-driven troubleshooting.</p></Card>
             <Card><p className="text-sm text-slate-300">Automation: Bash/Python tooling for checks, reporting, and alerts.</p></Card>
-            <Card><p className="text-sm text-slate-300">Next: containers, CI/CD, infrastructure basics, and deeper observability.</p></Card>
+            <Card><p className="text-sm text-slate-300">Learning foundations of containers, CI/CD, and infrastructure concepts.</p></Card>
           </div>
         </section>
 
@@ -133,23 +146,23 @@ export default function App() {
 
   <div className="grid gap-6 md:grid-cols-4">
     <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-center">
-      <p className="text-2xl font-semibold text-cyan-300">10+</p>
-      <p className="mt-1 text-xs text-slate-400">Automation scripts</p>
+      <p className="text-2xl font-semibold text-cyan-300">15+</p>
+      <p className="mt-1 text-xs text-slate-400">Automation scripts (ops checks & reporting)</p>
     </div>
 
     <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-center">
       <p className="text-2xl font-semibold text-indigo-300">Multi</p>
-      <p className="mt-1 text-xs text-slate-400">Servers monitored</p>
+      <p className="mt-1 text-xs text-slate-400">Servers monitored (production environment)</p>
     </div>
 
     <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-center">
       <p className="text-2xl font-semibold text-emerald-300">Daily</p>
-      <p className="mt-1 text-xs text-slate-400">Incident triage</p>
+      <p className="mt-1 text-xs text-slate-400">Daily operational checks and incident triage</p>
     </div>
 
     <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-center">
       <p className="text-2xl font-semibold text-amber-300">↓</p>
-      <p className="mt-1 text-xs text-slate-400">Manual work reduced</p>
+      <p className="mt-1 text-xs text-slate-400">Reduced manual ops tasks</p>
     </div>
   </div>
 </section>
@@ -158,9 +171,9 @@ export default function App() {
         {/* TOOLBOX */}
 <section id="toolbox" className="scroll-mt-24">
   <SectionTitle
-    eyebrow="Toolbox"
-    title="Tools I use in production & learning"
-    subtitle="Hands-on tools from daily L1 support work and my DevOps learning path."
+   eyebrow="Stack"
+   title="Operational Tooling & Practices"
+   subtitle="Tools and practices used in day-to-day support operations."
   />
 
   <div className="grid gap-6 md:grid-cols-3">
@@ -174,6 +187,7 @@ export default function App() {
         <Badge>Monitoring</Badge>
         <Badge>Incident Handling</Badge>
         <Badge>SQL</Badge>
+        <Badge>Reporting</Badge>
       </div>
     </div>
 
@@ -185,12 +199,13 @@ export default function App() {
         <Badge>Git</Badge>
         <Badge>Reporting</Badge>
         <Badge>System Validation</Badge>
+        <Badge>Monthly Closing</Badge>
       </div>
     </div>
 
     {/* LEARNING */}
     <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
-      <h3 className="text-sm font-semibold text-emerald-300 mb-3">Learning / Exploring</h3>
+      <h3 className="text-sm font-semibold text-emerald-300 mb-3">Learning (Foundational)</h3>
       <div className="flex flex-wrap gap-2">
         <Badge>Docker</Badge>
         <Badge>CI/CD</Badge>
@@ -255,8 +270,8 @@ export default function App() {
 <section id="roadmap" className="scroll-mt-24">
   <SectionTitle
     eyebrow="Roadmap"
-    title="From L1 Support to DevOps"
-    subtitle="A clear and realistic learning path based on my current role."
+    title="Operational Learning Roadmap"
+    subtitle="A practical learning path aligned with my current support role."
   />
 
   <div className="grid gap-6 md:grid-cols-3">
@@ -268,6 +283,8 @@ export default function App() {
         <li>• Production monitoring & log analysis</li>
         <li>• Incident triage & escalation</li>
         <li>• Bash & Python automation</li>
+        <li>• Service monitoring dashboard</li>
+        <li>• Dockerize 1–2 internal tools</li>
       </ul>
     </div>
 
@@ -276,9 +293,8 @@ export default function App() {
       <h3 className="text-sm font-semibold text-cyan-300 mb-2">Next (30–60 days)</h3>
       <p className="text-xs text-slate-400 mb-3">Short-term goals</p>
       <ul className="text-xs text-slate-300 space-y-1">
-        <li>• Dockerize 1–2 internal tools</li>
         <li>• GitHub Actions CI pipeline</li>
-        <li>• Basic service monitoring dashboard</li>
+
       </ul>
     </div>
 
@@ -298,7 +314,7 @@ export default function App() {
 
         {/* CERTIFICATES */}
         <section id="certificates" className="scroll-mt-24">
-          <SectionTitle eyebrow="Certificates" title="Learning proof" subtitle="Certifications & courses supporting my DevOps transition." />
+          <SectionTitle eyebrow="Certificates" title="Learning & Certifications" subtitle="Courses and certifications related to my current role and ongoing learning." />
           <div className="grid gap-5 md:grid-cols-3">
             {CERTIFICATES.map((c) => (
               <a
@@ -329,7 +345,12 @@ export default function App() {
 
         {/* PROJECTS */}
         <section id="projects" className="scroll-mt-24">
-          <SectionTitle eyebrow="Portfolio" title="Projects" subtitle="Built from real operational pain points." />
+          <SectionTitle eyebrow="Portfolio" title="Projects" subtitle="Projects built to reduce repetitive operational checks across production systems." 
+          
+          />
+            {/* <p className="mt-2 max-w-2xl text-sm text-slate-400">
+    Built to address repetitive operational checks across multiple production servers.
+  </p> */}
           <div className="grid gap-6 md:grid-cols-3">
             {PROJECTS.map((p) => (
               <div key={p.name} className="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden hover:border-cyan-500/60 transition-colors">
@@ -344,7 +365,7 @@ export default function App() {
                     />
                   ) : (
                     <div className="h-36 w-full flex items-center justify-center text-xs text-slate-500">
-                      Add thumbnail in /public/projects/
+                      {/* Add thumbnail in /public/projects/ */}
                     </div>
                   )}
                 </div>
@@ -420,7 +441,7 @@ export default function App() {
     {/* CASE 2 */}
     <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
       <h3 className="text-sm font-semibold text-indigo-300">
-        NGRS Reporting Automation
+        Reporting Automation
       </h3>
 
       <div className="mt-3 grid gap-4 md:grid-cols-3 text-xs text-slate-300">
@@ -490,11 +511,11 @@ export default function App() {
           <div className="grid gap-6 md:grid-cols-[2fr,3fr] items-start">
             <Card>
               <p className="text-sm text-slate-300">
-                Place your PDF at <span className="font-mono">public/resume/cv-agung.pdf</span>.
+              A concise overview of my professional  <span className="font-mono">background and experience.</span>
               </p>
               <div className="mt-4 flex flex-wrap gap-3">
                 <a href={PROFILE.resumeUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-4 py-2 text-xs font-semibold text-slate-950 hover:bg-emerald-400 transition-colors">
-                  Download CV <ArrowUpRight className="w-3 h-3" />
+                  Download Resume <ArrowUpRight className="w-3 h-3" />
                 </a>
                 <a href={PROFILE.resumeUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-xs font-semibold text-slate-100 hover:border-cyan-500/70 hover:text-cyan-300 transition-colors">
                   Open in new tab <ArrowUpRight className="w-3 h-3" />
@@ -527,11 +548,11 @@ export default function App() {
 
         {/* CONTACT */}
         <section id="contact" className="scroll-mt-24">
-          <SectionTitle eyebrow="Contact" title="Let’s connect" subtitle="Open for opportunities related to Ops, automation, and DevOps." />
+          <SectionTitle eyebrow="Contact" title="Let’s connect" subtitle="Open to discussions around operations, IT support, automation, and operational tooling." />
           <div className="grid gap-6 md:grid-cols-2">
             <Card>
               <p className="text-sm text-slate-300">
-                If you need someone who understands production pressure from support side and is actively growing into DevOps, I’m happy to talk.
+              Open to discussions around production support, automation, and operational tooling.
               </p>
             </Card>
             <Card>
