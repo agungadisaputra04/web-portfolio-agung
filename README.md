@@ -1,7 +1,7 @@
 # AgungOps Portfolio
 
 Personal portfolio of **Agung Adi Saputra** —  
-L1 Support Engineer transitioning into DevOps.
+L1 Support Engineer.
 
 ## Tech Stack
 - Vite + React
